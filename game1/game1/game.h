@@ -25,6 +25,5 @@ void PlayerMove(char board[ROW][COL], int row, int col);
 void ComputerMove(char board[ROW][COL], int row, int col);
 //ÅĞ¶ÏÊäÓ®½á¹û
 char IsWin(char board[ROW][COL], int row, int col);
-//ÅĞ¶ÏÆåÅÌÊÇ·ñÂúÁË
-int IsFull(char board[ROW][COL], int row, int col);
+
 
