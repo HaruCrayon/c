@@ -1,0 +1,3 @@
+﻿  test_pointer.c
+C:\code_gitee\c_language\test_0809\test_0809\test_pointer.c(57,1): warning C4133: “初始化”: 从“int *”到“char *”的类型不兼容
+  test_0809.vcxproj -> C:\code_gitee\c_language\test_0809\x64\Debug\test_0809.exe
