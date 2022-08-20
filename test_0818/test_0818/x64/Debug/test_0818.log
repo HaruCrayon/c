@@ -1,0 +1,3 @@
+﻿  test.c
+C:\code_gitee\c_language\test_0818\test_0818\test.c(407,66): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+  test_0818.vcxproj -> C:\code_gitee\c_language\test_0818\x64\Debug\test_0818.exe
