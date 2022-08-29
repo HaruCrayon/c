@@ -6,20 +6,106 @@
 //函数的实现
 
 
+//void InitContact(Contact* pc)
+//{
+//	pc->sz = 0;
+//	memset(pc->data, 0, sizeof(pc->data));
+//}
+
+
 void InitContact(Contact* pc)
 {
+	pc->data = (PeoInfo*)malloc(DEFAULT_SZ * sizeof(PeoInfo));
+	if (pc->data == NULL)
+	{
+		perror("InitContact");
+		return;
+	}
+
 	pc->sz = 0;
-	memset(pc->data, 0, sizeof(pc->data));
+	pc->capacity = DEFAULT_SZ;
+
+	//加载文件
+	LoadContact(pc);
+
 }
+
+
+void LoadContact(Contact* pc)
+{
+	//打开文件
+	FILE* pf = fopen("contact.dat", "r");
+	if (pf == NULL)
+	{
+		perror("LoadContact");
+		return;
+	}
+	//读取文件
+	PeoInfo tmp = { 0 };
+	while (fread(&tmp, sizeof(PeoInfo), 1, pf))
+	{
+		CheckCapacity(pc);
+		pc->data[pc->sz] = tmp;
+		pc->sz++;
+	}
+	
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+
+}
+
+
+void CheckCapacity(Contact* pc)
+{
+	if (pc->sz == pc->capacity)
+	{
+		PeoInfo* ptr = (PeoInfo*)realloc(pc->data, (pc->capacity + INC_SZ) * sizeof(PeoInfo));
+		if (ptr != NULL)
+		{
+			pc->data = ptr;
+			pc->capacity += INC_SZ;
+			printf("增容成功\n");
+		}
+		else
+		{
+			perror("AddContact");
+			printf("增加联系人失败");
+			return;
+		}
+	}
+}
+
+
+//void AddContact(Contact* pc)
+//{
+//	if (pc->sz == MAX_PEO)
+//	{
+//		printf("通讯录已满，无法添加\n");
+//		return;
+//	}
+//	//增加一个人的信息
+//	printf("请输入名字:>");
+//	scanf("%s", pc->data[pc->sz].name);
+//	printf("请输入年龄:>");
+//	scanf("%d", &(pc->data[pc->sz].age));
+//	printf("请输入性别:>");
+//	scanf("%s", pc->data[pc->sz].sex);
+//	printf("请输入电话:>");
+//	scanf("%s", pc->data[pc->sz].tele);
+//	printf("请输入地址:>");
+//	scanf("%s", pc->data[pc->sz].addr);
+//
+//	pc->sz++;
+//	printf("增加成功\n");
+//}
 
 
 void AddContact(Contact* pc)
 {
-	if (pc->sz == MAX_PEO)
-	{
-		printf("通讯录已满，无法添加\n");
-		return;
-	}
+	//考虑增容
+	CheckCapacity(pc);
+	
 	//增加一个人的信息
 	printf("请输入名字:>");
 	scanf("%s", pc->data[pc->sz].name);
@@ -152,3 +238,35 @@ void ModifyContact(Contact* pc)
 	}
 
 }
+
+
+void DestoryContact(Contact* pc)
+{
+	free(pc->data);
+	pc->data = NULL;
+	pc->sz = 0;
+	pc -> capacity = 0;
+
+}
+
+
+void SaveContact(Contact* pc)
+{
+	//打开文件
+	FILE* pf = fopen("contact.dat", "w");
+	if (pf == NULL)
+	{
+		perror("SaveContact");
+		return;
+	}
+	//写入文件
+	int i = 0;
+	for (i = 0; i < pc->sz; i++)
+	{
+		fwrite(pc->data + i, sizeof(PeoInfo), 1, pf);
+	}
+	//关闭文件
+	fclose(pf);
+	pf = NULL;
+}
+
