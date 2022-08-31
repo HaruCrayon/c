@@ -1,0 +1,10 @@
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 0
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 1
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 2
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 3
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 4
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 5
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 6
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 7
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 8
+C:\code_gitee\c_language\test_0831\test_0831\test.c 36 Aug 31 2022 15:12:23 9
