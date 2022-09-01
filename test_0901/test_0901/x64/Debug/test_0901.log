@@ -1,0 +1,6 @@
+﻿  test.c
+C:\code_gitee\c_language\test_0901\test_0901\test.c(406,38): warning C4311: “类型强制转换”: 从“int *”到“int”的指针截断
+C:\code_gitee\c_language\test_0901\test_0901\test.c(407,38): warning C4311: “类型强制转换”: 从“short *”到“int”的指针截断
+C:\code_gitee\c_language\test_0901\test_0901\test.c(408,38): warning C4311: “类型强制转换”: 从“int *”到“int”的指针截断
+C:\code_gitee\c_language\test_0901\test_0901\test.c(409,38): warning C4311: “类型强制转换”: 从“char *”到“int”的指针截断
+  test_0901.vcxproj -> C:\code_gitee\c_language\test_0901\x64\Debug\test_0901.exe
